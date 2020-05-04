@@ -59,6 +59,8 @@ button {
     font-family: "Courier", "Arial";
 }
 
-#lamp-on {
-    color: #000000;
+#log {
+    position: absolute;
+    margin-left: 500px;
+    margin-top: -500px;
 }
