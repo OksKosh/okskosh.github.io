@@ -56,27 +56,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
         new Transition("1", "2", "Elevator moved up 1 floor", "2"),
         new Transition("1", "3", "Elevator moved up 2 floors", "3"),
         new Transition("1", "4", "Elevator moved up 3 floors", "4"),
-        new Transition("1", "5", "Elevator moved up 4 floors", "5"),
         new Transition("2", "2", "Elevator stopped", "2"),
         new Transition("2", "1", "Elevator moved down 1 floor", "1"),
         new Transition("2", "3", "Elevator moved up 1 floor", "3"),
         new Transition("2", "4", "Elevator moved up 2 floors", "4"),
-        new Transition("2", "5", "Elevator moved up 3 floors", "5"),
         new Transition("3", "3", "Elevator stopped", "3"),
         new Transition("3", "2", "Elevator moved down 1 floor", "2"),
         new Transition("3", "1", "Elevator moved down 2 floors", "1"),
         new Transition("3", "4", "Elevator moved up 1 floor", "4"),
-        new Transition("3", "5", "Elevator moved up 2 floors", "5"),
         new Transition("4", "4", "Elevator stopped", "4"),
         new Transition("4", "2", "Elevator moved down 2 floors", "2"),
         new Transition("4", "3", "Elevator moved down 1 floor", "3"),
         new Transition("4", "1", "Elevator moved down 3 floors", "1"),
-        new Transition("4", "5", "Elevator moved up 1 floor", "5"),
-        new Transition("5", "5", "Elevator stopped", "5"),
-        new Transition("5", "2", "Elevator moved down 3 floors", "2"),
-        new Transition("5", "3", "Elevator moved down 2 floors", "3"),
-        new Transition("5", "4", "Elevator moved down 1 floor", "4"),
-        new Transition("5", "1", "Elevator moved down 4 floors", "1"),
     ];
 
     let fsm = new FiniteStateMachine("1");
@@ -99,11 +90,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
     document.getElementById("button-4").addEventListener("click", function (e) {
         let input = "4";
-        let res = fsm.accepts([input]);
-        document.querySelectorAll(".elevator")[0].className = "elevator floor-" + input;
-    });
-    document.getElementById("button-5").addEventListener("click", function (e) {
-        let input = "5";
         let res = fsm.accepts([input]);
         document.querySelectorAll(".elevator")[0].className = "elevator floor-" + input;
     });
