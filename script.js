@@ -73,24 +73,40 @@ document.addEventListener("DOMContentLoaded", function (e) {
     let fsm = new FiniteStateMachine("1");
     fsm.add_transitions(transitions);
 
+    const freeze_buttons = function() {
+        Array.from(document.querySelectorAll("button")).forEach(
+            (x) => {x.disabled = true}
+        );
+        
+        setTimeout(function() {
+            Array.from(document.querySelectorAll("button")).forEach(
+                (x) => {x.disabled = false}
+            );
+        }, 3000);
+    }
+
     document.getElementById("button-1").addEventListener("click", function (e) {
         let input = "1";
         let res = fsm.accepts([input]);
         document.querySelectorAll(".elevator")[0].className = "elevator floor-" + input;
+        freeze_buttons();
     });
     document.getElementById("button-2").addEventListener("click", function (e) {
         let input = "2";
         let res = fsm.accepts([input]);
         document.querySelectorAll(".elevator")[0].className = "elevator floor-" + input;
+        freeze_buttons();
     });
     document.getElementById("button-3").addEventListener("click", function (e) {
         let input = "3";
         let res = fsm.accepts([input]);
         document.querySelectorAll(".elevator")[0].className = "elevator floor-" + input;
+        freeze_buttons();
     });
     document.getElementById("button-4").addEventListener("click", function (e) {
         let input = "4";
         let res = fsm.accepts([input]);
         document.querySelectorAll(".elevator")[0].className = "elevator floor-" + input;
+        freeze_buttons();
     });
 });

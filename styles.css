@@ -39,22 +39,22 @@
     height: 129px;
     background-image: url(elevator.jpg);
     background-size: cover;
-    transition: all 3s 1s;
+    transition: all 2s 1s;
 }
 
 .floor-2 {
     top: 353px;
-    transition: all 3s 1s;
+    transition: all 2s 1s;
 }
 
 .floor-3 {
     top: 211px;
-    transition: all 3s 1s;
+    transition: all 2s 1s;
 }
 
 .floor-4 {
     top: 70px;
-    transition: all 3s 1s;
+    transition: all 2s 1s;
 }
 
 button {
